@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>随机</title>
+		<style type="text/css">
+			*{
+				text-align: center;
+			}
+			#na{
+				margin-top:50px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="na" style="font-size: 200px;"></h1>
+		<button id="btn" style="width:50px;height:50px">stop</button>
+	</body>
+	<script type="text/javascript">
+		var str ="a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,0,1,2,3,4,5,6,8,9";
+		var arr = str.split(",");
+		var interId = setInterval(function(){
+			na.innerHTML = arr[Math.floor(Math.random() * arr.length)];
+		},10);
+		btn.onclick = function(){
+			if(btn.innerHTML == "stop"){
+				clearInterval(interId);
+				btn.innerHTML = "start";
+			}else{
+				interId = setInterval(function(){
+					na.innerHTML = arr[Math.floor(Math.random() * arr.length)];
+				},10);
+				btn.innerHTML = "stop";
+			}
+		}
+	</script>
+</html>
